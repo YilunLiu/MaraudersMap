@@ -35,6 +35,7 @@
 		5B16B4A91C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A61C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework */; };
 		5B16B4AA1C2CE1FB0009EA2B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A71C2CE1FB0009EA2B /* ReactiveCocoa.framework */; };
 		5B16B4AB1C2CE1FB0009EA2B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A81C2CE1FB0009EA2B /* Result.framework */; };
+		5B16B4AD1C2CE2590009EA2B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4AC1C2CE2590009EA2B /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		5B16B4A61C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
 		5B16B4A71C2CE1FB0009EA2B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		5B16B4A81C2CE1FB0009EA2B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		5B16B4AC1C2CE2590009EA2B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				5B16B48D1C2CDFF70009EA2B /* LoginViewController.swift */,
+				5B16B4AC1C2CE2590009EA2B /* SignupViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B16B4AD1C2CE2590009EA2B /* SignupViewController.swift in Sources */,
 				5B16B48E1C2CDFF70009EA2B /* LoginViewController.swift in Sources */,
 				5B16B4541C2CDEA30009EA2B /* ViewController.swift in Sources */,
 				5B16B4521C2CDEA30009EA2B /* AppDelegate.swift in Sources */,

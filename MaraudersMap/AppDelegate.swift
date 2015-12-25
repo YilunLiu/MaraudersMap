@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import CocoaLumberjackSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,11 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // configue logger
+        DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console
+        DDLog.addLogger(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
+        
+        let fileLogger: DDFileLogger = DDFileLogger() // File Logger
+        fileLogger.rollingFrequency = 60*60*24  // 24 hours
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.addLogger(fileLogger)
         
         // Parse Setting
         Parse.enableLocalDatastore()
         Parse.setApplicationId("hRxJjpjoJhFQrPcI9Em1JfO2HVqbeYhjDqvasnRb",
             clientKey: "XphsJZDI7s0Mol4WFnhe02Zns5ito9cpS2ej6Trt")
+        
+        if PFUser.currentUser() == nil{
+            self.window?.rootViewController = LoginViewController()
+        }
         
         
         return true
