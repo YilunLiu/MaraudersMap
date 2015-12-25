@@ -31,6 +31,10 @@
 		5B16B49E1C2CE11B0009EA2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B49D1C2CE11B0009EA2B /* CoreGraphics.framework */; };
 		5B16B4A01C2CE1240009EA2B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B49F1C2CE1240009EA2B /* AudioToolbox.framework */; };
 		5B16B4A21C2CE12B0009EA2B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A11C2CE12B0009EA2B /* CFNetwork.framework */; };
+		5B16B4A51C2CE1EB0009EA2B /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A41C2CE1EB0009EA2B /* CocoaLumberjack.framework */; };
+		5B16B4A91C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A61C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework */; };
+		5B16B4AA1C2CE1FB0009EA2B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A71C2CE1FB0009EA2B /* ReactiveCocoa.framework */; };
+		5B16B4AB1C2CE1FB0009EA2B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A81C2CE1FB0009EA2B /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		5B16B49D1C2CE11B0009EA2B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5B16B49F1C2CE1240009EA2B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5B16B4A11C2CE12B0009EA2B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5B16B4A41C2CE1EB0009EA2B /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
+		5B16B4A61C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
+		5B16B4A71C2CE1FB0009EA2B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		5B16B4A81C2CE1FB0009EA2B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +103,10 @@
 				5B16B49A1C2CE10C0009EA2B /* QuartzCore.framework in Frameworks */,
 				5B16B4981C2CE1050009EA2B /* Security.framework in Frameworks */,
 				5B16B4961C2CE0FF0009EA2B /* StoreKit.framework in Frameworks */,
+				5B16B4AB1C2CE1FB0009EA2B /* Result.framework in Frameworks */,
 				5B16B4941C2CE0F80009EA2B /* SystemConfiguration.framework in Frameworks */,
+				5B16B4AA1C2CE1FB0009EA2B /* ReactiveCocoa.framework in Frameworks */,
+				5B16B4A91C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework in Frameworks */,
 				5B16B4921C2CE0F20009EA2B /* libz.tbd in Frameworks */,
 				5B16B4901C2CE0EA0009EA2B /* libsqlite3.0.tbd in Frameworks */,
 				5B16B48B1C2CDF070009EA2B /* ParseUI.framework in Frameworks */,
@@ -103,6 +114,7 @@
 				5B16B4861C2CDF070009EA2B /* Bolts.framework in Frameworks */,
 				5B16B4891C2CDF070009EA2B /* ParseFacebookUtilsV4.framework in Frameworks */,
 				5B16B4881C2CDF070009EA2B /* ParseFacebookUtils.framework in Frameworks */,
+				5B16B4A51C2CE1EB0009EA2B /* CocoaLumberjack.framework in Frameworks */,
 				5B16B48A1C2CDF070009EA2B /* ParseTwitterUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +192,10 @@
 		5B16B47F1C2CDEA90009EA2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B16B4A61C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework */,
+				5B16B4A71C2CE1FB0009EA2B /* ReactiveCocoa.framework */,
+				5B16B4A81C2CE1FB0009EA2B /* Result.framework */,
+				5B16B4A41C2CE1EB0009EA2B /* CocoaLumberjack.framework */,
 				5B16B4A11C2CE12B0009EA2B /* CFNetwork.framework */,
 				5B16B49F1C2CE1240009EA2B /* AudioToolbox.framework */,
 				5B16B49D1C2CE11B0009EA2B /* CoreGraphics.framework */,
@@ -510,6 +526,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Parse",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MaraudersMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -525,6 +542,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Parse",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MaraudersMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
