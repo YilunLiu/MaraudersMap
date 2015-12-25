@@ -20,7 +20,6 @@
 		5B16B4891C2CDF070009EA2B /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4831C2CDF070009EA2B /* ParseFacebookUtilsV4.framework */; };
 		5B16B48A1C2CDF070009EA2B /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4841C2CDF070009EA2B /* ParseTwitterUtils.framework */; };
 		5B16B48B1C2CDF070009EA2B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4851C2CDF070009EA2B /* ParseUI.framework */; };
-		5B16B48E1C2CDFF70009EA2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B48D1C2CDFF70009EA2B /* LoginViewController.swift */; };
 		5B16B4901C2CE0EA0009EA2B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B48F1C2CE0EA0009EA2B /* libsqlite3.0.tbd */; };
 		5B16B4921C2CE0F20009EA2B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4911C2CE0F20009EA2B /* libz.tbd */; };
 		5B16B4941C2CE0F80009EA2B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4931C2CE0F80009EA2B /* SystemConfiguration.framework */; };
@@ -35,7 +34,10 @@
 		5B16B4A91C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A61C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework */; };
 		5B16B4AA1C2CE1FB0009EA2B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A71C2CE1FB0009EA2B /* ReactiveCocoa.framework */; };
 		5B16B4AB1C2CE1FB0009EA2B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4A81C2CE1FB0009EA2B /* Result.framework */; };
-		5B16B4AD1C2CE2590009EA2B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4AC1C2CE2590009EA2B /* SignupViewController.swift */; };
+		5B16B4AF1C2CE57E0009EA2B /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4AE1C2CE57E0009EA2B /* MeViewController.swift */; };
+		5B16B4B11C2CE9E30009EA2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4B01C2CE9E20009EA2B /* LoginViewController.swift */; };
+		5B16B4B41C2CEA150009EA2B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4B31C2CEA150009EA2B /* User.swift */; };
+		5B16B4B61C2CEBC40009EA2B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4B51C2CEBC40009EA2B /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +77,6 @@
 		5B16B4831C2CDF070009EA2B /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = Parse/ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		5B16B4841C2CDF070009EA2B /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseTwitterUtils.framework; path = Parse/ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		5B16B4851C2CDF070009EA2B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = Parse/ParseUI.framework; sourceTree = "<group>"; };
-		5B16B48D1C2CDFF70009EA2B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B16B48F1C2CE0EA0009EA2B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		5B16B4911C2CE0F20009EA2B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		5B16B4931C2CE0F80009EA2B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -90,7 +91,10 @@
 		5B16B4A61C2CE1FB0009EA2B /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
 		5B16B4A71C2CE1FB0009EA2B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		5B16B4A81C2CE1FB0009EA2B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		5B16B4AC1C2CE2590009EA2B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		5B16B4AE1C2CE57E0009EA2B /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		5B16B4B01C2CE9E20009EA2B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5B16B4B31C2CEA150009EA2B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5B16B4B51C2CEBC40009EA2B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 		5B16B4501C2CDEA30009EA2B /* MaraudersMap */ = {
 			isa = PBXGroup;
 			children = (
+				5B16B4B21C2CE9FD0009EA2B /* Models */,
 				5B16B48C1C2CDFBB0009EA2B /* Controllers */,
 				5B16B4511C2CDEA30009EA2B /* AppDelegate.swift */,
 				5B16B4531C2CDEA30009EA2B /* ViewController.swift */,
@@ -221,10 +226,19 @@
 		5B16B48C1C2CDFBB0009EA2B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5B16B48D1C2CDFF70009EA2B /* LoginViewController.swift */,
-				5B16B4AC1C2CE2590009EA2B /* SignupViewController.swift */,
+				5B16B4AE1C2CE57E0009EA2B /* MeViewController.swift */,
+				5B16B4B01C2CE9E20009EA2B /* LoginViewController.swift */,
+				5B16B4B51C2CEBC40009EA2B /* SignupViewController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5B16B4B21C2CE9FD0009EA2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B16B4B31C2CEA150009EA2B /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,9 +396,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B16B4AD1C2CE2590009EA2B /* SignupViewController.swift in Sources */,
-				5B16B48E1C2CDFF70009EA2B /* LoginViewController.swift in Sources */,
+				5B16B4B61C2CEBC40009EA2B /* SignupViewController.swift in Sources */,
+				5B16B4B11C2CE9E30009EA2B /* LoginViewController.swift in Sources */,
+				5B16B4AF1C2CE57E0009EA2B /* MeViewController.swift in Sources */,
 				5B16B4541C2CDEA30009EA2B /* ViewController.swift in Sources */,
+				5B16B4B41C2CEA150009EA2B /* User.swift in Sources */,
 				5B16B4521C2CDEA30009EA2B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

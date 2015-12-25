@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientKey: "XphsJZDI7s0Mol4WFnhe02Zns5ito9cpS2ej6Trt")
         
         if PFUser.currentUser() == nil{
-            self.window?.rootViewController = LoginViewController()
+            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")
         }
         
         
