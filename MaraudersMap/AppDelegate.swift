@@ -28,12 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Parse Setting
         Parse.enableLocalDatastore()
-        Parse.setApplicationId("hRxJjpjoJhFQrPcI9Em1JfO2HVqbeYhjDqvasnRb",
-            clientKey: "XphsJZDI7s0Mol4WFnhe02Zns5ito9cpS2ej6Trt")
+        Parse.setApplicationId(PARSE_APPID, clientKey: PARSE_CLIENTID )
         
         if PFUser.currentUser() == nil{
             self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")
         }
+        
+        
         
         
         return true

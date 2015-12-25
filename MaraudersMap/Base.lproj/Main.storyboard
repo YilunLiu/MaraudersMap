@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-417" y="-622"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Group List View Controller-->
         <scene sceneID="u8e-Pr-dqU">
             <objects>
-                <tableViewController id="zQb-3Q-Jv8" sceneMemberID="viewController">
+                <tableViewController id="zQb-3Q-Jv8" customClass="GroupListViewController" customModule="MaraudersMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bV1-um-6Hd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,13 @@
                             <outlet property="delegate" destination="zQb-3Q-Jv8" id="KIG-je-kTL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wxZ-2s-7af"/>
+                    <navigationItem key="navigationItem" id="wxZ-2s-7af">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="knr-lF-LsX">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="zQb-3Q-Jv8" id="0w1-Bk-cKB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skB-aJ-q2N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
