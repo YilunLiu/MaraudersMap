@@ -21,7 +21,9 @@ class GroupsViewModel: NSObject {
     
     let groups = MutableProperty<[Group]>([Group]())
     
+    // Need to factor out this
     func reloadGroups(){
+        
         
         let localQuery = self.query()
         localQuery.fromLocalDatastore()
@@ -38,10 +40,14 @@ class GroupsViewModel: NSObject {
             (groups: [PFObject]?, error: NSError?) in
             if error == nil{
                 let groups = groups as! [Group]
-                self.groups.value = groups
                 for group in groups {
                     group.pinInBackground()
+                    
+                    for user in group.members{
+                        user.pinInBackground()
+                    }
                 }
+                self.groups.value = groups
             }
         }
     }

@@ -16,15 +16,6 @@ class Group: PFObject, PFSubclassing {
     static let LAST_MESSAGE_TIME_KEY = "LastMessage"
     
     
-    override class func initialize() {
-        struct Static {
-            static var onceToken : dispatch_once_t = 0;
-        }
-        dispatch_once(&Static.onceToken) {
-            self.registerSubclass()
-        }
-    }
-    
     static func parseClassName() -> String {
         return "Group"
     }
@@ -33,7 +24,7 @@ class Group: PFObject, PFSubclassing {
         super.init()
     }
     
-    convenience init(members: [PFUser]){
+    convenience init(members: [User]){
         self.init()
         self.lastMessageTime = NSDate()
         self.name = ""

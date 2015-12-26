@@ -13,15 +13,7 @@ class User: PFUser{
 
     static let PHONE_NUMBER_KEY = "PhoneNumber"
     static let NICK_NAME_KEY = "NickName"
-    
-    override class func initialize() {
-        struct Static {
-            static var onceToken : dispatch_once_t = 0;
-        }
-        dispatch_once(&Static.onceToken) {
-            self.registerSubclass()
-        }
-    }
+    static let FRIENDS_KEY = "Friends"
     
     
     var phoneNumber: String {
@@ -41,4 +33,5 @@ class User: PFUser{
             setObject(newValue, forKey: User.NICK_NAME_KEY)
         }
     }
+    
 }

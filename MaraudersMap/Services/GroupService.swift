@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import ReactiveCocoa
+import CocoaLumberjackSwift
 
 class GroupService {
     
@@ -20,15 +21,22 @@ class GroupService {
     
     init(group: Group){
         self.group = group
-        self.messageURL = Message.FB_MESSAGE_URL + "\\" + group.objectId!
+        self.messageURL = Message.FB_MESSAGE_URL + "/" + group.objectId!
         self.firebaseRef = Firebase(url: self.messageURL)
         
         let (signal, observer) = Signal<Message, NSError>.pipe()
-        self.firebaseRef.observeEventType(.Value){
+        self.firebaseRef.observeEventType(.ChildAdded){
             (snapshot: FDataSnapshot!) in
-            let message = Message(data: snapshot.value)
-            observer.sendNext(message)
-            group.lastMessageTime = message.createdAt
+            if !(snapshot.value is NSNull){
+                DDLogInfo("Message Received: \(snapshot.value)")
+                
+                var data = snapshot.value as! [String:AnyObject]
+                data[Message.ID_KEY] = snapshot.key
+                
+                let message = Message(data: data)
+                group.lastMessageTime = message.createdAt
+                observer.sendNext(message)
+            }
         }
         self.messageSignal = signal
         self.messageObserver = observer

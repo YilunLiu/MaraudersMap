@@ -41,6 +41,12 @@ class GroupListViewController: UITableViewController {
     }
     
     // MARK: - TableView Delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let group = groupsViewModel.groups.value[indexPath.row]
+        let chatViewController = ChatViewController()
+        chatViewController.group = group
+        self.navigationController?.pushViewController(chatViewController, animated: true)
+    }
     
     
     // MARK: - Target & Action

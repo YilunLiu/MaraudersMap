@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DDLog.addLogger(fileLogger)
         
         // Parse Setting
+        
+        User.registerSubclass()
+        Group.registerSubclass()
+        
         Parse.enableLocalDatastore()
         Parse.setApplicationId(PARSE_APPID, clientKey: PARSE_CLIENTID )
         
