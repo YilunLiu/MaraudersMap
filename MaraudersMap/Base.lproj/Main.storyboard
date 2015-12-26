@@ -71,7 +71,7 @@
                     <navigationItem key="navigationItem" id="wxZ-2s-7af">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="knr-lF-LsX">
                             <connections>
-                                <action selector="addButtonPressed:" destination="zQb-3Q-Jv8" id="0w1-Bk-cKB"/>
+                                <segue destination="vVy-JC-wbS" kind="show" id="fUh-bc-Mxz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -80,10 +80,73 @@
             </objects>
             <point key="canvasLocation" x="345" y="-623"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Create a group-->
+        <scene sceneID="wO2-NN-VKX">
+            <objects>
+                <viewController id="vVy-JC-wbS" customClass="CreateGroupViewController" customModule="MaraudersMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H1L-Js-ACg"/>
+                        <viewControllerLayoutGuide type="bottom" id="gUi-Yh-ipq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ww8-bi-ED1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0E1-JD-eEz">
+                                <rect key="frame" x="20" y="94" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nWe-G6-gyx">
+                                <rect key="frame" x="0.0" y="126" width="600" height="425"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendSelectionCell" id="i7j-qy-doS">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i7j-qy-doS" id="iB3-Kf-3ag">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vVy-JC-wbS" id="xwI-9J-jAw"/>
+                                    <outlet property="delegate" destination="vVy-JC-wbS" id="xAX-bG-9jS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0E1-JD-eEz" firstAttribute="leading" secondItem="Ww8-bi-ED1" secondAttribute="leadingMargin" id="8S0-n0-bYW"/>
+                            <constraint firstItem="0E1-JD-eEz" firstAttribute="trailing" secondItem="Ww8-bi-ED1" secondAttribute="trailingMargin" id="Akg-6N-xEk"/>
+                            <constraint firstItem="nWe-G6-gyx" firstAttribute="leading" secondItem="Ww8-bi-ED1" secondAttribute="leadingMargin" constant="-20" id="U4E-5Z-CIh"/>
+                            <constraint firstItem="nWe-G6-gyx" firstAttribute="trailing" secondItem="Ww8-bi-ED1" secondAttribute="trailingMargin" constant="20" id="WEe-zd-yyY"/>
+                            <constraint firstItem="0E1-JD-eEz" firstAttribute="top" secondItem="H1L-Js-ACg" secondAttribute="bottom" constant="30" id="dzW-3c-Pom"/>
+                            <constraint firstItem="nWe-G6-gyx" firstAttribute="top" secondItem="0E1-JD-eEz" secondAttribute="bottom" constant="8" id="lei-jO-LGE"/>
+                            <constraint firstItem="gUi-Yh-ipq" firstAttribute="top" secondItem="nWe-G6-gyx" secondAttribute="bottom" id="qHb-5C-UJP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a group" id="ffY-2U-zhR">
+                        <barButtonItem key="rightBarButtonItem" title="complete" id="cmJ-Yb-dsy">
+                            <connections>
+                                <action selector="completePressed:" destination="vVy-JC-wbS" id="Dml-zW-tom"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameField" destination="0E1-JD-eEz" id="Lyb-VP-2NJ"/>
+                        <outlet property="tableView" destination="nWe-G6-gyx" id="sFW-vx-S8v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eMV-qP-Sgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205" y="-1026"/>
+        </scene>
+        <!--Friends List View Controller-->
         <scene sceneID="aHB-2x-kre">
             <objects>
-                <tableViewController id="jcH-0K-LUt" sceneMemberID="viewController">
+                <tableViewController id="jcH-0K-LUt" customClass="FriendsListViewController" customModule="MaraudersMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AAa-WN-3UO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +166,13 @@
                             <outlet property="delegate" destination="jcH-0K-LUt" id="Jia-oE-kdt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KOz-xo-Tz5"/>
+                    <navigationItem key="navigationItem" id="KOz-xo-Tz5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ucO-WM-gMn">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="jcH-0K-LUt" id="Khe-33-dre"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFi-L5-DQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

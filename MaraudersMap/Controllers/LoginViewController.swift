@@ -38,6 +38,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Target & Action
     @IBAction func signupButtonPressed(sender: AnyObject) {
+        self.view.endEditing(true)
         guard let presentingVC = self.presentingViewController else{
             self.presentViewController(self.storyboard!.instantiateViewControllerWithIdentifier("SignupViewController"), animated: true, completion: nil)
             return

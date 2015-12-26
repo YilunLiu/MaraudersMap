@@ -34,4 +34,17 @@ class User: PFUser{
         }
     }
     
+    var friends: PFRelation{
+        get{
+            return relationForKey(User.FRIENDS_KEY)
+        }
+    }
+    
+    func addAFriend(user: User){
+        self.friends.addObject(user)
+    }
+    
+    func removeAFriend(user: User){
+        self.friends.removeObject(user)
+    }
 }

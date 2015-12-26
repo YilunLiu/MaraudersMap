@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Firebase
 import CocoaLumberjackSwift
 
 @UIApplicationMain
@@ -26,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7
         DDLog.addLogger(fileLogger)
         
+        // Firebase Setting
+        Firebase.defaultConfig().persistenceEnabled = true
+        
         // Parse Setting
         
         User.registerSubclass()
@@ -37,8 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if PFUser.currentUser() == nil{
             self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")
         }
-        
-        
         
         
         return true

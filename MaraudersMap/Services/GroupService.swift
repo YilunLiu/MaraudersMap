@@ -23,6 +23,7 @@ class GroupService {
         self.group = group
         self.messageURL = Message.FB_MESSAGE_URL + "/" + group.objectId!
         self.firebaseRef = Firebase(url: self.messageURL)
+        self.firebaseRef.keepSynced(true)
         
         let (signal, observer) = Signal<Message, NSError>.pipe()
         self.firebaseRef.observeEventType(.ChildAdded){

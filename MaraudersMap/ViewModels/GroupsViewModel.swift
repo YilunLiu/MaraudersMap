@@ -12,53 +12,25 @@ import Parse
 
 class GroupsViewModel: NSObject {
     
-    static let defaultInstance = GroupsViewModel()
+    let groups = MutableProperty<[Group]>([Group]())
+    private let groupsService = GroupsService.defaultInstance
     
-    private override init(){
+    override init(){
         super.init()
         
-    }
-    
-    let groups = MutableProperty<[Group]>([Group]())
-    
-    // Need to factor out this
-    func reloadGroups(){
-        
-        
-        let localQuery = self.query()
-        localQuery.fromLocalDatastore()
-        localQuery.findObjectsInBackgroundWithBlock{
-            (groups: [PFObject]?, error: NSError?) in
-            if error == nil{
-                let groups = groups as! [Group]
+        self.groupsService.groupsSignal.observeOn(QueueScheduler.mainQueueScheduler)
+            .observeNext{
+                (groups:[Group]) in
                 self.groups.value = groups
-            }
         }
         
-        let internetQuery = self.query()
-        internetQuery.findObjectsInBackgroundWithBlock{
-            (groups: [PFObject]?, error: NSError?) in
-            if error == nil{
-                let groups = groups as! [Group]
-                for group in groups {
-                    group.pinInBackground()
-                    
-                    for user in group.members{
-                        user.pinInBackground()
-                    }
-                }
-                self.groups.value = groups
-            }
-        }
     }
+    
     
     // MARK: - HELPER
-    private func query() -> PFQuery{
-        let query = Group.query()!
-        query.whereKey(Group.MEMBERS_KEY, equalTo: User.currentUser()!)
-        query.includeKey(Group.MEMBERS_KEY)
-        query.orderByDescending(Group.LAST_MESSAGE_TIME_KEY)
-        return query
+
+    func reloadGroups(){
+        self.groupsService.fetchGroups()
     }
     
 }

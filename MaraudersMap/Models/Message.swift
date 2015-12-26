@@ -43,7 +43,7 @@ class Message: NSObject, JSQMessageData {
         self.authorId = data[Message.AUTHORID_KEY] as! String
         self.createdAt =  NSDate.fromString(data[Message.CREATED_AT_KEY] as! String)
         self.content = data[Message.CONTENT_KEY] as! String
-        self.authorName = data[Message.AUTHORID_KEY] as! String
+        self.authorName = data[Message.AUTHOR_NAME_KEY] as! String
         super.init()
     }
    

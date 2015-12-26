@@ -12,7 +12,7 @@ import CocoaLumberjackSwift
 
 class GroupListViewController: UITableViewController {
 
-    var groupsViewModel = GroupsViewModel.defaultInstance
+    var groupsViewModel = GroupsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,18 +48,4 @@ class GroupListViewController: UITableViewController {
         self.navigationController?.pushViewController(chatViewController, animated: true)
     }
     
-    
-    // MARK: - Target & Action
-    @IBAction func addButtonPressed(sender: AnyObject) {
-        let group = Group(members: [User.currentUser()!])
-        group.name = "Group1"
-        group.saveInBackgroundWithBlock{
-            (isSuccess: Bool, error: NSError?) in
-            if isSuccess {
-                self.groupsViewModel.reloadGroups()
-            } else {
-                DDLogError("Failed to Create a Group, error: \(error)")
-            }
-        }
-    }
 }

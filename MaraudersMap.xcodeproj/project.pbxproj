@@ -95,6 +95,13 @@
 		5B16B56F1C2D730E0009EA2B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B56E1C2D730E0009EA2B /* ChatViewController.swift */; };
 		5B16B5711C2D74080009EA2B /* JSQSystemSoundPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B5701C2D74080009EA2B /* JSQSystemSoundPlayer.framework */; };
 		5B16B57D1C2DAE390009EA2B /* NSDate+StringConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B57C1C2DAE390009EA2B /* NSDate+StringConversion.swift */; };
+		5B48E8C81C2E520A0060F94D /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8C71C2E520A0060F94D /* FriendsListViewController.swift */; };
+		5B48E8CA1C2E52B80060F94D /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8C91C2E52B80060F94D /* FriendsViewModel.swift */; };
+		5B48E8CC1C2E52EC0060F94D /* FriendSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8CB1C2E52EC0060F94D /* FriendSerivce.swift */; };
+		5B48E8CE1C2E7FC60060F94D /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8CD1C2E7FC60060F94D /* CreateGroupViewController.swift */; };
+		5B48E8D21C2E804D0060F94D /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8D01C2E804D0060F94D /* TextFieldTableViewCell.swift */; };
+		5B48E8D31C2E804D0060F94D /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */; };
+		5B48E8D51C2E87530060F94D /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8D41C2E87530060F94D /* GroupsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,6 +262,13 @@
 		5B16B5701C2D74080009EA2B /* JSQSystemSoundPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQSystemSoundPlayer.framework; path = Carthage/Build/iOS/JSQSystemSoundPlayer.framework; sourceTree = "<group>"; };
 		5B16B57A1C2D779C0009EA2B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		5B16B57C1C2DAE390009EA2B /* NSDate+StringConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+StringConversion.swift"; sourceTree = "<group>"; };
+		5B48E8C71C2E520A0060F94D /* FriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		5B48E8C91C2E52B80060F94D /* FriendsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		5B48E8CB1C2E52EC0060F94D /* FriendSerivce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSerivce.swift; sourceTree = "<group>"; };
+		5B48E8CD1C2E7FC60060F94D /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		5B48E8D01C2E804D0060F94D /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		5B48E8D41C2E87530060F94D /* GroupsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +345,7 @@
 		5B16B4501C2CDEA30009EA2B /* MaraudersMap */ = {
 			isa = PBXGroup;
 			children = (
+				5B48E8CF1C2E80040060F94D /* Views */,
 				5B16B57B1C2DAE040009EA2B /* Extension */,
 				5B16B4E01C2D72530009EA2B /* ThirdParty */,
 				5B16B4CA1C2D45A30009EA2B /* Services */,
@@ -405,6 +420,8 @@
 				5B16B4B51C2CEBC40009EA2B /* SignupViewController.swift */,
 				5B16B4CD1C2D53900009EA2B /* GroupListViewController.swift */,
 				5B16B56E1C2D730E0009EA2B /* ChatViewController.swift */,
+				5B48E8C71C2E520A0060F94D /* FriendsListViewController.swift */,
+				5B48E8CD1C2E7FC60060F94D /* CreateGroupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -424,6 +441,7 @@
 			children = (
 				5B16B4BC1C2D349A0009EA2B /* GroupsViewModel.swift */,
 				5B16B4BE1C2D3AC40009EA2B /* GroupViewModel.swift */,
+				5B48E8C91C2E52B80060F94D /* FriendsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -432,6 +450,8 @@
 			isa = PBXGroup;
 			children = (
 				5B16B4CB1C2D45C80009EA2B /* GroupService.swift */,
+				5B48E8CB1C2E52EC0060F94D /* FriendSerivce.swift */,
+				5B48E8D41C2E87530060F94D /* GroupsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -605,6 +625,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		5B48E8CF1C2E80040060F94D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B48E8D01C2E804D0060F94D /* TextFieldTableViewCell.swift */,
+				5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -716,6 +745,7 @@
 				5B16B45C1C2CDEA30009EA2B /* LaunchScreen.storyboard in Resources */,
 				5B16B56D1C2D72800009EA2B /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
 				5B16B5421C2D72800009EA2B /* JSQMessagesAssets.bundle in Resources */,
+				5B48E8D31C2E804D0060F94D /* TextFieldTableViewCell.xib in Resources */,
 				5B16B4591C2CDEA30009EA2B /* Assets.xcassets in Resources */,
 				5B16B5681C2D72800009EA2B /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				5B16B5631C2D72800009EA2B /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
@@ -786,20 +816,25 @@
 				5B16B5501C2D72800009EA2B /* JSQMessagesTimestampFormatter.m in Sources */,
 				5B16B4B11C2CE9E30009EA2B /* LoginViewController.swift in Sources */,
 				5B16B4AF1C2CE57E0009EA2B /* MeViewController.swift in Sources */,
+				5B48E8D21C2E804D0060F94D /* TextFieldTableViewCell.swift in Sources */,
 				5B16B4C31C2D3CB10009EA2B /* GlobalSetting.swift in Sources */,
 				5B16B54E1C2D72800009EA2B /* JSQMessagesBubbleImageFactory.m in Sources */,
 				5B16B5641C2D72800009EA2B /* JSQMessagesComposerTextView.m in Sources */,
+				5B48E8C81C2E520A0060F94D /* FriendsListViewController.swift in Sources */,
 				5B16B5461C2D72800009EA2B /* UIColor+JSQMessages.m in Sources */,
 				5B16B4BD1C2D349A0009EA2B /* GroupsViewModel.swift in Sources */,
 				5B16B57D1C2DAE390009EA2B /* NSDate+StringConversion.swift in Sources */,
 				5B16B4CC1C2D45C80009EA2B /* GroupService.swift in Sources */,
+				5B48E8CA1C2E52B80060F94D /* FriendsViewModel.swift in Sources */,
 				5B16B5481C2D72800009EA2B /* UIImage+JSQMessages.m in Sources */,
 				5B16B54F1C2D72800009EA2B /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
 				5B16B4541C2CDEA30009EA2B /* ViewController.swift in Sources */,
 				5B16B55A1C2D72800009EA2B /* JSQMessagesBubbleImage.m in Sources */,
 				5B16B56F1C2D730E0009EA2B /* ChatViewController.swift in Sources */,
+				5B48E8D51C2E87530060F94D /* GroupsService.swift in Sources */,
 				5B16B5451C2D72800009EA2B /* NSString+JSQMessages.m in Sources */,
 				5B16B5491C2D72800009EA2B /* UIView+JSQMessages.m in Sources */,
+				5B48E8CC1C2E52EC0060F94D /* FriendSerivce.swift in Sources */,
 				5B16B55F1C2D72800009EA2B /* JSQMessagesCollectionViewCell.m in Sources */,
 				5B16B5671C2D72800009EA2B /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
 				5B16B4C11C2D3B020009EA2B /* Message.swift in Sources */,
@@ -815,6 +850,7 @@
 				5B16B5651C2D72800009EA2B /* JSQMessagesInputToolbar.m in Sources */,
 				5B16B5471C2D72800009EA2B /* UIDevice+JSQMessages.m in Sources */,
 				5B16B4521C2CDEA30009EA2B /* AppDelegate.swift in Sources */,
+				5B48E8CE1C2E7FC60060F94D /* CreateGroupViewController.swift in Sources */,
 				5B16B54D1C2D72800009EA2B /* JSQMessagesAvatarImageFactory.m in Sources */,
 				5B16B55D1C2D72800009EA2B /* JSQMessagesCellTextView.m in Sources */,
 				5B16B5431C2D72800009EA2B /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
@@ -972,6 +1008,7 @@
 					"$(PROJECT_DIR)/Vendors/Parse",
 				);
 				INFOPLIST_FILE = MaraudersMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = robocat.com.MaraudersMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -992,6 +1029,7 @@
 					"$(PROJECT_DIR)/Vendors/Parse",
 				);
 				INFOPLIST_FILE = MaraudersMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = robocat.com.MaraudersMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";

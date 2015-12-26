@@ -46,6 +46,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signupButtonPressed(sender: AnyObject) {
+        self.view.endEditing(true)
         guard let username = usernameField.text else{
             return
         }

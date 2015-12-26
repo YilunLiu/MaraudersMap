@@ -27,7 +27,7 @@ class ChatViewController: JSQMessagesViewController
 
         // Do any additional setup after loading the view.
         self.senderId = User.currentUser()!.objectId
-        self.senderDisplayName = User.currentUser()!.objectId
+        self.senderDisplayName = User.currentUser()!.nickName
         
         let bubbleFactory = JSQMessagesBubbleImageFactory()
         self.bubbleImageOutgoing = bubbleFactory.outgoingMessagesBubbleImageWithColor(ChatViewController.COLOR_OUTGOING)
@@ -184,6 +184,7 @@ class ChatViewController: JSQMessagesViewController
     
     private func shouldDisplayName(indexPath indexPath:NSIndexPath) -> Bool{
         let message = self.groupViewModel.messages.value[indexPath.item]
+        
         if self.isIncoming(message){
             if indexPath.item > 0{
                 let previous = self.groupViewModel.messages.value[indexPath.item-1]
@@ -192,13 +193,25 @@ class ChatViewController: JSQMessagesViewController
                 }
                 return true
             }
+            return true
         }
         return false
     }
     
     private func shouldDisplayTime(indexPath indexPath:NSIndexPath) -> Bool{
-        return indexPath.item % 3 == 0
+        let message = messageAtIndexPath(indexPath.item)
+        if indexPath.item > 0{
+            let previous = messageAtIndexPath(indexPath.item-1)
+            if message.createdAt.timeIntervalSinceDate(previous.createdAt) < 300{
+                return false
+            }
+        }
+        return true
     }
     
+    private func messageAtIndexPath(index: Int) -> Message{
+        return self.groupViewModel.messages.value[index]
+        
+    }
     
 }
