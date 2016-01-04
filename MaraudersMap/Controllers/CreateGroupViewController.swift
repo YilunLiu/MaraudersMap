@@ -62,6 +62,10 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
 
         return cell
     }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Select Friends"
+    }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell  = tableView.cellForRowAtIndexPath(indexPath)!
