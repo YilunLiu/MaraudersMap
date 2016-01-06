@@ -102,6 +102,9 @@
 		5B48E8D21C2E804D0060F94D /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8D01C2E804D0060F94D /* TextFieldTableViewCell.swift */; };
 		5B48E8D31C2E804D0060F94D /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */; };
 		5B48E8D51C2E87530060F94D /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8D41C2E87530060F94D /* GroupsService.swift */; };
+		5BE10A231C3A4FC700D80F72 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE10A221C3A4FC700D80F72 /* Location.swift */; };
+		5BE10A251C3C3B5B00D80F72 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE10A241C3C3B5B00D80F72 /* LocationService.swift */; };
+		5BE10A271C3CED5800D80F72 /* GroupTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE10A261C3CED5800D80F72 /* GroupTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,6 +272,9 @@
 		5B48E8D01C2E804D0060F94D /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		5B48E8D41C2E87530060F94D /* GroupsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
+		5BE10A221C3A4FC700D80F72 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		5BE10A241C3C3B5B00D80F72 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		5BE10A261C3CED5800D80F72 /* GroupTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,11 +360,11 @@
 				5B16B48C1C2CDFBB0009EA2B /* Controllers */,
 				5B16B4511C2CDEA30009EA2B /* AppDelegate.swift */,
 				5B16B4531C2CDEA30009EA2B /* ViewController.swift */,
+				5B16B4C21C2D3CB10009EA2B /* GlobalSetting.swift */,
 				5B16B4551C2CDEA30009EA2B /* Main.storyboard */,
 				5B16B4581C2CDEA30009EA2B /* Assets.xcassets */,
 				5B16B45A1C2CDEA30009EA2B /* LaunchScreen.storyboard */,
 				5B16B45D1C2CDEA30009EA2B /* Info.plist */,
-				5B16B4C21C2D3CB10009EA2B /* GlobalSetting.swift */,
 			);
 			path = MaraudersMap;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				5B16B56E1C2D730E0009EA2B /* ChatViewController.swift */,
 				5B48E8C71C2E520A0060F94D /* FriendsListViewController.swift */,
 				5B48E8CD1C2E7FC60060F94D /* CreateGroupViewController.swift */,
+				5BE10A261C3CED5800D80F72 /* GroupTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -432,6 +439,7 @@
 				5B16B4B31C2CEA150009EA2B /* User.swift */,
 				5B16B4B71C2D026A0009EA2B /* Group.swift */,
 				5B16B4C01C2D3B020009EA2B /* Message.swift */,
+				5BE10A221C3A4FC700D80F72 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -452,6 +460,7 @@
 				5B16B4CB1C2D45C80009EA2B /* GroupService.swift */,
 				5B48E8CB1C2E52EC0060F94D /* FriendSerivce.swift */,
 				5B48E8D41C2E87530060F94D /* GroupsService.swift */,
+				5BE10A241C3C3B5B00D80F72 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -820,10 +829,12 @@
 				5B16B4C31C2D3CB10009EA2B /* GlobalSetting.swift in Sources */,
 				5B16B54E1C2D72800009EA2B /* JSQMessagesBubbleImageFactory.m in Sources */,
 				5B16B5641C2D72800009EA2B /* JSQMessagesComposerTextView.m in Sources */,
+				5BE10A251C3C3B5B00D80F72 /* LocationService.swift in Sources */,
 				5B48E8C81C2E520A0060F94D /* FriendsListViewController.swift in Sources */,
 				5B16B5461C2D72800009EA2B /* UIColor+JSQMessages.m in Sources */,
 				5B16B4BD1C2D349A0009EA2B /* GroupsViewModel.swift in Sources */,
 				5B16B57D1C2DAE390009EA2B /* NSDate+StringConversion.swift in Sources */,
+				5BE10A271C3CED5800D80F72 /* GroupTabBarController.swift in Sources */,
 				5B16B4CC1C2D45C80009EA2B /* GroupService.swift in Sources */,
 				5B48E8CA1C2E52B80060F94D /* FriendsViewModel.swift in Sources */,
 				5B16B5481C2D72800009EA2B /* UIImage+JSQMessages.m in Sources */,
@@ -855,6 +866,7 @@
 				5B16B55D1C2D72800009EA2B /* JSQMessagesCellTextView.m in Sources */,
 				5B16B5431C2D72800009EA2B /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
 				5B16B5441C2D72800009EA2B /* NSBundle+JSQMessages.m in Sources */,
+				5BE10A231C3A4FC700D80F72 /* Location.swift in Sources */,
 				5B16B5621C2D72800009EA2B /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

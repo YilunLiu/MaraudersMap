@@ -8,6 +8,7 @@
 
 import Foundation
 import Parse
+import Firebase
 
 class Group: PFObject, PFSubclassing {
     
@@ -65,6 +66,13 @@ class Group: PFObject, PFSubclassing {
     
     func removeMember(user: User){
         removeObject(user, forKey: Group.MEMBERS_KEY)
+    }
+    
+    func updateUsersGroupOnFB(){
+        for member in self.members{
+            let firebaseRef = Firebase(url: member.firebaseGroupPath)
+            firebaseRef.updateChildValues([self.objectId!:true])
+        }
     }
     
     

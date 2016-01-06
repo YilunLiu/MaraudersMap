@@ -34,7 +34,7 @@ class GroupListViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell", forIndexPath: indexPath)
         let group = groupsViewModel.groups.value[indexPath.row]
         cell.textLabel?.text = group.name
         return cell
@@ -43,9 +43,11 @@ class GroupListViewController: UITableViewController {
     // MARK: - TableView Delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let group = groupsViewModel.groups.value[indexPath.row]
-        let chatViewController = ChatViewController()
-        chatViewController.group = group
-        self.navigationController?.pushViewController(chatViewController, animated: true)
+        let groupController = self.storyboard?.instantiateViewControllerWithIdentifier("GroupTabBarController") as! GroupTabBarController
+        groupController.group = group
+        
+        self.presentViewController(groupController, animated: true, completion: nil)
     }
+    
     
 }

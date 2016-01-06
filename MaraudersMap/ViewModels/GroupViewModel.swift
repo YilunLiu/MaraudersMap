@@ -21,7 +21,10 @@ class GroupViewModel: NSObject{
     let lastUpdatedTime: MutableProperty<NSDate>
     let groupName: ConstantProperty<String>
     
-    init(group: Group) {
+    
+    static var map = [String:GroupViewModel]()
+    
+    private init(group: Group) {
         self.group = group
         self.groupService = GroupService(group: group)
         self.groupName = ConstantProperty<String>(group.name)
@@ -36,6 +39,14 @@ class GroupViewModel: NSObject{
                 self.lastUpdatedTime.value = message.createdAt
         }
     }
+    
+    static func groupViewModel(group: Group) -> GroupViewModel{
+        if GroupViewModel.map[group.objectId!] == nil{
+            GroupViewModel.map[group.objectId!] = GroupViewModel(group: group)
+        }
+        return map[group.objectId!]!
+    }
+    
     
     
     

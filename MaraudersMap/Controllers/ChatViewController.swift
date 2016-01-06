@@ -24,6 +24,9 @@ class ChatViewController: JSQMessagesViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tabbarController = self.tabBarController as! GroupTabBarController
+        self.group = tabbarController.group
 
         // Do any additional setup after loading the view.
         self.senderId = User.currentUser()!.objectId
@@ -34,13 +37,17 @@ class ChatViewController: JSQMessagesViewController
         self.bubbleImageIncoming = bubbleFactory.incomingMessagesBubbleImageWithColor(ChatViewController.COLOR_INCOMING)
         avatarImageBlank = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "chat_blank"), diameter: 30)
         
-        self.groupViewModel = GroupViewModel(group: self.group)
+        self.groupViewModel = GroupViewModel.groupViewModel(group)
         self.groupViewModel.lastMessage.producer.startWithNext{
             lastMessage in
             self.collectionView?.reloadData()
         }
         
         self.navigationItem.title = self.group.name
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.tabBarController!.tabBar.hidden = true
     }
 
@@ -174,7 +181,11 @@ class ChatViewController: JSQMessagesViewController
         // TODO
     }
     
+    // MARK: - Target & Action
     
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        self.tabBarController?.selectedIndex = 0
+    }
     
     // MARK: - Helper
     private func isIncoming(message:Message) -> Bool{

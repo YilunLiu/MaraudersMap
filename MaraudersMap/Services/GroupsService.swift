@@ -10,6 +10,7 @@ import Foundation
 import ReactiveCocoa
 import Parse
 import CocoaLumberjackSwift
+import Firebase
 
 class GroupsService{
     
@@ -23,7 +24,26 @@ class GroupsService{
         let (groupsSignal, groupsObserver) = Signal<[Group],NSError>.pipe()
         self.groupsSignal = groupsSignal
         self.groupsObserver = groupsObserver
+
+        if User.currentUser() != nil{
+            let firebaseGroupsRef = Firebase(url: User.currentUser()!.firebaseGroupPath)
+            firebaseGroupsRef.observeEventType(.ChildAdded, withBlock: {
+                snapshot in
+                self.fetchGroups()
+            })
+        }
         
+        
+    }
+    
+    func observeGroups(){
+        if User.currentUser() != nil{
+            let firebaseGroupsRef = Firebase(url: User.currentUser()!.firebaseGroupPath)
+            firebaseGroupsRef.observeEventType(.ChildAdded, withBlock: {
+                snapshot in
+                self.fetchGroups()
+            })
+        }
     }
     
     func createGroup(members members: [User], withName name: String){
@@ -34,6 +54,7 @@ class GroupsService{
             if isSuccess{
                 group.pinInBackgroundWithBlock{
                     (_, _) in
+                    group.updateUsersGroupOnFB()
                     self.fetchGroups()
                 }
             }
@@ -63,6 +84,7 @@ class GroupsService{
         internetQuery.findObjectsInBackgroundWithBlock{
             (groups: [PFObject]?, error: NSError?) in
             if error == nil{
+                Group.unpinAllObjectsInBackground()
                 let groups = groups as! [Group]
                 for group in groups {
                     group.pinInBackground()

@@ -14,7 +14,26 @@ class User: PFUser{
     static let PHONE_NUMBER_KEY = "PhoneNumber"
     static let NICK_NAME_KEY = "NickName"
     static let FRIENDS_KEY = "Friends"
+    static let LOCATION_KEY = "Location"
+    static let FIREBASE_USER_URL = "/users"
     
+    var firebaseUserPath: String {
+        get {
+            return FIRE_BASE_URL+User.FIREBASE_USER_URL+"/"+self.objectId!
+        }
+    }
+    
+    var firebaseGroupPath: String{
+        get {
+            return self.firebaseUserPath+"/groups"
+        }
+    }
+    
+    var firebaseLocationPath: String{
+        get {
+            return self.firebaseUserPath+"/location"
+        }
+    }
     
     var phoneNumber: String {
         get {
@@ -37,6 +56,15 @@ class User: PFUser{
     var friends: PFRelation{
         get{
             return relationForKey(User.FRIENDS_KEY)
+        }
+    }
+    
+    var location: Location{
+        get{
+            return objectForKey(User.LOCATION_KEY) as! Location
+        }
+        set(newValue){
+            setObject(newValue, forKey: User.LOCATION_KEY)
         }
     }
     
