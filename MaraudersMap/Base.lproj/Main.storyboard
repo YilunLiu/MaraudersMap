@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yeC-zI-20O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yeC-zI-20O">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -201,7 +201,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOb-hd-bSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2787" y="457"/>
+            <point key="canvasLocation" x="2777" y="457"/>
         </scene>
         <!--Group Map View Controller-->
         <scene sceneID="JrW-tE-a2M">
@@ -246,15 +246,19 @@
                             <constraint firstItem="PlF-mR-TlV" firstAttribute="top" secondItem="o1z-M4-2Bh" secondAttribute="bottom" id="3At-ac-8tW"/>
                             <constraint firstItem="o1z-M4-2Bh" firstAttribute="top" secondItem="upz-pV-jyM" secondAttribute="bottom" id="AwM-vC-j27"/>
                             <constraint firstAttribute="trailingMargin" secondItem="upz-pV-jyM" secondAttribute="trailing" constant="-20" id="GBD-le-DA4"/>
+                            <constraint firstItem="upz-pV-jyM" firstAttribute="leading" secondItem="gqT-bb-k9Q" secondAttribute="leading" id="f5E-Mq-xEF"/>
                             <constraint firstItem="o1z-M4-2Bh" firstAttribute="leading" secondItem="gqT-bb-k9Q" secondAttribute="leadingMargin" constant="-20" id="gcr-Mw-Yb8"/>
                             <constraint firstItem="upz-pV-jyM" firstAttribute="width" secondItem="gqT-bb-k9Q" secondAttribute="height" multiplier="1:1" id="ih8-hy-o9V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="o1z-M4-2Bh" secondAttribute="trailing" constant="-20" id="mEN-TB-d7v"/>
                             <constraint firstItem="upz-pV-jyM" firstAttribute="top" secondItem="of4-BR-RmO" secondAttribute="bottom" id="mqX-R4-HsN"/>
+                            <constraint firstAttribute="trailing" secondItem="upz-pV-jyM" secondAttribute="trailing" id="nYj-LT-k0m"/>
                             <constraint firstItem="upz-pV-jyM" firstAttribute="leading" secondItem="gqT-bb-k9Q" secondAttribute="leadingMargin" constant="-20" id="zzV-mG-eF0"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="GBD-le-DA4"/>
                                 <exclude reference="ih8-hy-o9V"/>
+                                <exclude reference="zzV-mG-eF0"/>
                             </mask>
                         </variation>
                     </view>
@@ -328,10 +332,10 @@
             </objects>
             <point key="canvasLocation" x="337" y="56"/>
         </scene>
-        <!--Me View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="hSx-oI-3d4">
             <objects>
-                <tableViewController id="AyB-Hv-8En" customClass="MeViewController" customModule="MaraudersMap" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="AyB-Hv-8En" customClass="ProfileViewController" customModule="MaraudersMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="UsE-Kd-FqR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,11 +451,11 @@
             </objects>
             <point key="canvasLocation" x="-417" y="38"/>
         </scene>
-        <!--Me-->
+        <!--Profile-->
         <scene sceneID="gpX-k7-sgt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hxR-dw-bce" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" id="aLN-4o-fre"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile_Inactive_Icon" selectedImage="Profile_Active_Icon" id="aLN-4o-fre"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Vy-1k-qFL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -717,7 +721,7 @@
         <scene sceneID="2Lk-VR-gFy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="szt-vT-Meh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="EMD-g7-Jbg"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map_Inactive_Icon" selectedImage="Map_Active_Icon" id="EMD-g7-Jbg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ujT-K2-D16">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -736,7 +740,7 @@
         <scene sceneID="B9d-tY-7XL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="grS-XF-yrr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" id="mex-Ho-vWA"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="Chat_Inactive_Icon" selectedImage="Chat_Active_Icon" id="mex-Ho-vWA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vFc-kb-5oO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -771,4 +775,12 @@
             <point key="canvasLocation" x="1975" y="457"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Chat_Active_Icon" width="48" height="37"/>
+        <image name="Chat_Inactive_Icon" width="48" height="37"/>
+        <image name="Map_Active_Icon" width="48" height="42"/>
+        <image name="Map_Inactive_Icon" width="48" height="42"/>
+        <image name="Profile_Active_Icon" width="48" height="48"/>
+        <image name="Profile_Inactive_Icon" width="48" height="48"/>
+    </resources>
 </document>

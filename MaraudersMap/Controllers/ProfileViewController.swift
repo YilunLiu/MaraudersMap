@@ -11,7 +11,7 @@ import UIKit
 import Parse
 import ParseUI
 
-class MeViewController: UITableViewController {
+class ProfileViewController: UITableViewController {
 
     @IBOutlet weak var profilePictureImageView: PFImageView!
     @IBOutlet weak var usernameLabel: UILabel!
