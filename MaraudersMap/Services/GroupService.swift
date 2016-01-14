@@ -19,7 +19,16 @@ class GroupService {
     let messageSignal: Signal<Message, NSError>
     let messageObserver: Observer<Message, NSError>
     
-    init(group: Group){
+    static var map = [String: GroupService]()
+    
+    static func GroupServiceWithGroup(group: Group) -> GroupService {
+        if map[group.objectId!] == nil{
+            map[group.objectId!] = GroupService(group: group)
+        }
+        return map[group.objectId!]!
+    }
+    
+    private init(group: Group){
         self.group = group
         self.messageURL = Message.FB_MESSAGE_URL + "/" + group.objectId!
         self.firebaseRef = Firebase(url: self.messageURL)

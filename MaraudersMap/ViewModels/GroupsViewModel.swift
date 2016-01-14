@@ -9,11 +9,14 @@
 import Foundation
 import ReactiveCocoa
 import Parse
+import CocoaLumberjackSwift
 
 class GroupsViewModel: NSObject {
     
     let groups = MutableProperty<[Group]>([Group]())
     private let groupsService = GroupsService.defaultInstance
+    
+    
     
     override init(){
         super.init()

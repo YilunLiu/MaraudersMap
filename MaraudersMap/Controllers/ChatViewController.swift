@@ -20,7 +20,7 @@ class ChatViewController: JSQMessagesViewController
     var bubbleImageIncoming: JSQMessagesBubbleImage!
     var avatarImageBlank: JSQMessagesAvatarImage!
 
-    var groupViewModel: GroupViewModel!
+    var groupViewModel: GroupChatViewModel!
     var group: Group!
     
     deinit{
@@ -43,10 +43,10 @@ class ChatViewController: JSQMessagesViewController
         self.bubbleImageIncoming = bubbleFactory.incomingMessagesBubbleImageWithColor(ChatViewController.COLOR_INCOMING)
         avatarImageBlank = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "chat_blank"), diameter: 30)
         
-        self.groupViewModel = GroupViewModel.groupViewModel(group)
+        self.groupViewModel = GroupChatViewModel(group: group)
         self.groupViewModel.lastMessage.producer.startWithNext{
-            lastMessage in
-            self.collectionView?.reloadData()
+            [weak self] lastMessage in
+            self?.collectionView?.reloadData()
         }
         
         self.navigationItem.title = self.group.name
