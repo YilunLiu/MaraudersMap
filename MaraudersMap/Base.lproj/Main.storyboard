@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -167,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="2777" y="-267"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Group Setting View Controller-->
         <scene sceneID="NiM-Pw-v7o">
             <objects>
-                <tableViewController id="WfM-cr-77I" sceneMemberID="viewController">
+                <tableViewController id="WfM-cr-77I" customClass="GroupSettingViewController" customModule="MaraudersMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zD6-kX-LiO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,17 +192,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Zfl-wX-GgR">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="2la-FC-D2e"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="2la-FC-D2e">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="WfM-cr-77I" id="dmA-se-lzz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOb-hd-bSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2787" y="457"/>
         </scene>
-        <!--View Controller-->
+        <!--Group Map View Controller-->
         <scene sceneID="JrW-tE-a2M">
             <objects>
-                <viewController id="yXF-LC-RIU" sceneMemberID="viewController">
+                <viewController id="yXF-LC-RIU" customClass="GroupMapViewController" customModule="MaraudersMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="of4-BR-RmO"/>
                         <viewControllerLayoutGuide type="bottom" id="PlF-mR-TlV"/>
@@ -209,11 +214,61 @@
                     <view key="view" contentMode="scaleToFill" id="gqT-bb-k9Q">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="upz-pV-jyM">
+                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yXF-LC-RIU" id="YmG-uB-y8a"/>
+                                </connections>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o1z-M4-2Bh">
+                                <rect key="frame" x="0.0" y="364" width="600" height="187"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendLocationCell" id="GkS-ee-rIZ">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GkS-ee-rIZ" id="Dlx-tF-Ikh">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yXF-LC-RIU" id="I92-DP-gbC"/>
+                                    <outlet property="delegate" destination="yXF-LC-RIU" id="Gbb-G2-U1g"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="upz-pV-jyM" firstAttribute="height" secondItem="gqT-bb-k9Q" secondAttribute="height" multiplier="1:2" id="1cU-6n-py5"/>
+                            <constraint firstItem="PlF-mR-TlV" firstAttribute="top" secondItem="o1z-M4-2Bh" secondAttribute="bottom" id="3At-ac-8tW"/>
+                            <constraint firstItem="o1z-M4-2Bh" firstAttribute="top" secondItem="upz-pV-jyM" secondAttribute="bottom" id="AwM-vC-j27"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="upz-pV-jyM" secondAttribute="trailing" constant="-20" id="GBD-le-DA4"/>
+                            <constraint firstItem="o1z-M4-2Bh" firstAttribute="leading" secondItem="gqT-bb-k9Q" secondAttribute="leadingMargin" constant="-20" id="gcr-Mw-Yb8"/>
+                            <constraint firstItem="upz-pV-jyM" firstAttribute="width" secondItem="gqT-bb-k9Q" secondAttribute="height" multiplier="1:1" id="ih8-hy-o9V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o1z-M4-2Bh" secondAttribute="trailing" constant="-20" id="mEN-TB-d7v"/>
+                            <constraint firstItem="upz-pV-jyM" firstAttribute="top" secondItem="of4-BR-RmO" secondAttribute="bottom" id="mqX-R4-HsN"/>
+                            <constraint firstItem="upz-pV-jyM" firstAttribute="leading" secondItem="gqT-bb-k9Q" secondAttribute="leadingMargin" constant="-20" id="zzV-mG-eF0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ih8-hy-o9V"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="G03-Nf-oG5">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="J6v-fF-rDf"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="J6v-fF-rDf">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="yXF-LC-RIU" id="i9u-vr-wPL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="upz-pV-jyM" id="UHo-Gq-fY1"/>
+                        <outlet property="tableView" destination="o1z-M4-2Bh" id="QZc-NT-e2J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ntu-lE-8cV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -341,6 +396,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6E-qC-TXk">
                                                     <rect key="frame" x="8" y="8" width="584" height="27"/>
                                                     <state key="normal" title="Log Out"/>
+                                                    <connections>
+                                                        <action selector="logoutPressed:" destination="AyB-Hv-8En" eventType="touchUpInside" id="9w2-bf-hDh"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

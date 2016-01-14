@@ -15,6 +15,7 @@ class User: PFUser{
     static let NICK_NAME_KEY = "NickName"
     static let FRIENDS_KEY = "Friends"
     static let LOCATION_KEY = "Location"
+    static let LAST_LOCATION_UPDATED_KEY = "LastLocationUpdateTime"
     static let FIREBASE_USER_URL = "/users"
     
     var firebaseUserPath: String {
@@ -59,12 +60,22 @@ class User: PFUser{
         }
     }
     
-    var location: Location{
+    var location: Location?{
         get{
-            return objectForKey(User.LOCATION_KEY) as! Location
+            return objectForKey(User.LOCATION_KEY) as? Location
         }
         set(newValue){
-            setObject(newValue, forKey: User.LOCATION_KEY)
+            self.lastLocationUpdatedTime = NSDate()
+            setObject(newValue!, forKey: User.LOCATION_KEY)
+        }
+    }
+    
+    var lastLocationUpdatedTime: NSDate?{
+        get {
+            return objectForKey(User.LAST_LOCATION_UPDATED_KEY) as? NSDate
+        }
+        set (newValue){
+            setObject(newValue!, forKey: User.LAST_LOCATION_UPDATED_KEY)
         }
     }
     

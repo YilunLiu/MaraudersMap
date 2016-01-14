@@ -10,14 +10,17 @@ import UIKit
 import Parse
 import Firebase
 import CocoaLumberjackSwift
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
+    let locationManager = CLLocationManager()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         // configue logger
         DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console
         DDLog.addLogger(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
@@ -42,6 +45,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginViewController")
         }
         
+        // location configue
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = 100
+        switch (CLLocationManager.authorizationStatus()){
+        case .NotDetermined: locationManager.requestAlwaysAuthorization()
+        case .Denied :
+            let alert = UIAlertController(title: "Location Permission Denied", message: "Please turn on your location in Settings", preferredStyle: UIAlertControllerStyle.Alert)
+            let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
+            alert.addAction(okAction)
+            self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+        default: break
+        }
+        locationManager.startUpdatingLocation()
         
         return true
     }
@@ -54,6 +70,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        self.saveData()
+        
+        
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -66,8 +85,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        self.saveData()
     }
 
+    // MARK: - Location Manager Delegate
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let clLocation = locations.last{
+            let location = Location(location: clLocation)
+            LocationService.updateLocationForCurrentUser(location)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedAlways || status == .AuthorizedWhenInUse{
+            manager.startUpdatingLocation()
+        }
+    }
+    
+    
+    // MARK: - Helper
+    func saveData(){
+        User.currentUser()?.saveInBackground()
+    }
 
 }
 

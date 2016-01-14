@@ -102,6 +102,12 @@
 		5B48E8D21C2E804D0060F94D /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8D01C2E804D0060F94D /* TextFieldTableViewCell.swift */; };
 		5B48E8D31C2E804D0060F94D /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */; };
 		5B48E8D51C2E87530060F94D /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8D41C2E87530060F94D /* GroupsService.swift */; };
+		5B9627E61C44D6560087CB86 /* GroupSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9627E51C44D6560087CB86 /* GroupSettingViewController.swift */; };
+		5B9627E81C44D9960087CB86 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9627E71C44D9960087CB86 /* MapKit.framework */; };
+		5B9627EA1C44DC4F0087CB86 /* UIColor+RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9627E91C44DC4F0087CB86 /* UIColor+RandomColor.swift */; };
+		5B9627EC1C45C7CF0087CB86 /* UserLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9627EB1C45C7CF0087CB86 /* UserLocationViewModel.swift */; };
+		5B9627F01C4627610087CB86 /* UserLocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9627EF1C4627610087CB86 /* UserLocationAnnotation.swift */; };
+		5BC021111C3DA5E4004015EA /* GroupMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC021101C3DA5E4004015EA /* GroupMapViewController.swift */; };
 		5BE10A231C3A4FC700D80F72 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE10A221C3A4FC700D80F72 /* Location.swift */; };
 		5BE10A251C3C3B5B00D80F72 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE10A241C3C3B5B00D80F72 /* LocationService.swift */; };
 		5BE10A271C3CED5800D80F72 /* GroupTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE10A261C3CED5800D80F72 /* GroupTabBarController.swift */; };
@@ -272,6 +278,12 @@
 		5B48E8D01C2E804D0060F94D /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		5B48E8D41C2E87530060F94D /* GroupsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
+		5B9627E51C44D6560087CB86 /* GroupSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSettingViewController.swift; sourceTree = "<group>"; };
+		5B9627E71C44D9960087CB86 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5B9627E91C44DC4F0087CB86 /* UIColor+RandomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RandomColor.swift"; sourceTree = "<group>"; };
+		5B9627EB1C45C7CF0087CB86 /* UserLocationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationViewModel.swift; sourceTree = "<group>"; };
+		5B9627EF1C4627610087CB86 /* UserLocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationAnnotation.swift; sourceTree = "<group>"; };
+		5BC021101C3DA5E4004015EA /* GroupMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMapViewController.swift; sourceTree = "<group>"; };
 		5BE10A221C3A4FC700D80F72 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5BE10A241C3C3B5B00D80F72 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5BE10A261C3CED5800D80F72 /* GroupTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTabBarController.swift; sourceTree = "<group>"; };
@@ -282,6 +294,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9627E81C44D9960087CB86 /* MapKit.framework in Frameworks */,
 				5B16B4C71C2D3D4F0009EA2B /* libicucore.tbd in Frameworks */,
 				5B16B4C51C2D3D410009EA2B /* libc++.tbd in Frameworks */,
 				5B16B4DB1C2D6F130009EA2B /* ParseFacebookUtilsV4.framework in Frameworks */,
@@ -390,6 +403,7 @@
 		5B16B47F1C2CDEA90009EA2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B9627E71C44D9960087CB86 /* MapKit.framework */,
 				5B16B5701C2D74080009EA2B /* JSQSystemSoundPlayer.framework */,
 				5B16B4DE1C2D722E0009EA2B /* Firebase.framework */,
 				5B16B4D21C2D6F130009EA2B /* Bolts.framework */,
@@ -421,14 +435,13 @@
 		5B16B48C1C2CDFBB0009EA2B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5B9627E21C44D5FA0087CB86 /* Group */,
 				5B16B4AE1C2CE57E0009EA2B /* MeViewController.swift */,
 				5B16B4B01C2CE9E20009EA2B /* LoginViewController.swift */,
 				5B16B4B51C2CEBC40009EA2B /* SignupViewController.swift */,
 				5B16B4CD1C2D53900009EA2B /* GroupListViewController.swift */,
-				5B16B56E1C2D730E0009EA2B /* ChatViewController.swift */,
 				5B48E8C71C2E520A0060F94D /* FriendsListViewController.swift */,
 				5B48E8CD1C2E7FC60060F94D /* CreateGroupViewController.swift */,
-				5BE10A261C3CED5800D80F72 /* GroupTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -440,6 +453,7 @@
 				5B16B4B71C2D026A0009EA2B /* Group.swift */,
 				5B16B4C01C2D3B020009EA2B /* Message.swift */,
 				5BE10A221C3A4FC700D80F72 /* Location.swift */,
+				5B9627EF1C4627610087CB86 /* UserLocationAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -450,6 +464,7 @@
 				5B16B4BC1C2D349A0009EA2B /* GroupsViewModel.swift */,
 				5B16B4BE1C2D3AC40009EA2B /* GroupViewModel.swift */,
 				5B48E8C91C2E52B80060F94D /* FriendsViewModel.swift */,
+				5B9627EB1C45C7CF0087CB86 /* UserLocationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -630,6 +645,7 @@
 			isa = PBXGroup;
 			children = (
 				5B16B57C1C2DAE390009EA2B /* NSDate+StringConversion.swift */,
+				5B9627E91C44DC4F0087CB86 /* UIColor+RandomColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -641,6 +657,17 @@
 				5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5B9627E21C44D5FA0087CB86 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				5B16B56E1C2D730E0009EA2B /* ChatViewController.swift */,
+				5BE10A261C3CED5800D80F72 /* GroupTabBarController.swift */,
+				5BC021101C3DA5E4004015EA /* GroupMapViewController.swift */,
+				5B9627E51C44D6560087CB86 /* GroupSettingViewController.swift */,
+			);
+			name = Group;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -825,6 +852,7 @@
 				5B16B5501C2D72800009EA2B /* JSQMessagesTimestampFormatter.m in Sources */,
 				5B16B4B11C2CE9E30009EA2B /* LoginViewController.swift in Sources */,
 				5B16B4AF1C2CE57E0009EA2B /* MeViewController.swift in Sources */,
+				5B9627E61C44D6560087CB86 /* GroupSettingViewController.swift in Sources */,
 				5B48E8D21C2E804D0060F94D /* TextFieldTableViewCell.swift in Sources */,
 				5B16B4C31C2D3CB10009EA2B /* GlobalSetting.swift in Sources */,
 				5B16B54E1C2D72800009EA2B /* JSQMessagesBubbleImageFactory.m in Sources */,
@@ -832,8 +860,10 @@
 				5BE10A251C3C3B5B00D80F72 /* LocationService.swift in Sources */,
 				5B48E8C81C2E520A0060F94D /* FriendsListViewController.swift in Sources */,
 				5B16B5461C2D72800009EA2B /* UIColor+JSQMessages.m in Sources */,
+				5B9627EC1C45C7CF0087CB86 /* UserLocationViewModel.swift in Sources */,
 				5B16B4BD1C2D349A0009EA2B /* GroupsViewModel.swift in Sources */,
 				5B16B57D1C2DAE390009EA2B /* NSDate+StringConversion.swift in Sources */,
+				5B9627EA1C44DC4F0087CB86 /* UIColor+RandomColor.swift in Sources */,
 				5BE10A271C3CED5800D80F72 /* GroupTabBarController.swift in Sources */,
 				5B16B4CC1C2D45C80009EA2B /* GroupService.swift in Sources */,
 				5B48E8CA1C2E52B80060F94D /* FriendsViewModel.swift in Sources */,
@@ -862,8 +892,10 @@
 				5B16B5471C2D72800009EA2B /* UIDevice+JSQMessages.m in Sources */,
 				5B16B4521C2CDEA30009EA2B /* AppDelegate.swift in Sources */,
 				5B48E8CE1C2E7FC60060F94D /* CreateGroupViewController.swift in Sources */,
+				5B9627F01C4627610087CB86 /* UserLocationAnnotation.swift in Sources */,
 				5B16B54D1C2D72800009EA2B /* JSQMessagesAvatarImageFactory.m in Sources */,
 				5B16B55D1C2D72800009EA2B /* JSQMessagesCellTextView.m in Sources */,
+				5BC021111C3DA5E4004015EA /* GroupMapViewController.swift in Sources */,
 				5B16B5431C2D72800009EA2B /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
 				5B16B5441C2D72800009EA2B /* NSBundle+JSQMessages.m in Sources */,
 				5BE10A231C3A4FC700D80F72 /* Location.swift in Sources */,

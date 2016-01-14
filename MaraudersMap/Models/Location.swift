@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Firebase
+import CoreLocation
 
 typealias Location = PFGeoPoint
 
@@ -17,6 +18,7 @@ extension PFGeoPoint {
     
     @nonobjc static let LATITUDE_KEY = "Latitude"
     @nonobjc static let LONGITUDE_KEY = "Longitude"
+    
     
     convenience init(data: [String: AnyObject]){
         self.init()
