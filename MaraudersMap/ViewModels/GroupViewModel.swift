@@ -33,10 +33,10 @@ class GroupViewModel: NSObject{
         
         self.groupService.messageSignal.observeOn(QueueScheduler.mainQueueScheduler)
             .observeNext{
-                message in
-                self.messages.value.append(message)
-                self.lastMessage.value = message
-                self.lastUpdatedTime.value = message.createdAt
+            [weak self] message in
+                self?.messages.value.append(message)
+                self?.lastMessage.value = message
+                self?.lastUpdatedTime.value = message.createdAt
         }
     }
     

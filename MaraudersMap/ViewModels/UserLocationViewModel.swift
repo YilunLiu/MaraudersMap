@@ -33,17 +33,18 @@ class UserLocationViewModel: NSObject{
         
         super.init()
         self.locationService.locationSignal.observeNext{
-            location in
-            self.location.value = location
-            if self.mapAnnotation.value == nil{
+            [weak self] location in
+            self?.location.value = location
+            if self?.mapAnnotation.value == nil{
                 let annotation = UserLocationAnnotation(location: location, user: user)
-                self.mapAnnotation.value = annotation
+                self?.mapAnnotation.value = annotation
             }
-            self.mapAnnotation.value?.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+            self?.mapAnnotation.value?.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
         }
+        
         self.locationService.updateTimeSignal.observeNext{
-            date in
-            self.lastUpdateTime.value = date
+            [weak self] date in
+            self?.lastUpdateTime.value = date
         }
     }
 }

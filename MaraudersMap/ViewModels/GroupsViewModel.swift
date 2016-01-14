@@ -20,8 +20,8 @@ class GroupsViewModel: NSObject {
         
         self.groupsService.groupsSignal.observeOn(QueueScheduler.mainQueueScheduler)
             .observeNext{
-                (groups:[Group]) in
-                self.groups.value = groups
+            [weak self] (groups:[Group]) in
+                self?.groups.value = groups
         }
         
     }

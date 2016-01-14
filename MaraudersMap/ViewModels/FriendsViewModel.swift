@@ -24,8 +24,8 @@ class FriendsViewModel: NSObject {
         
         self.friendsSignal.observeOn(QueueScheduler.mainQueueScheduler)
         .observeNext{
-            (friends: [User]) in
-            self.friends.value = friends
+            [weak self](friends: [User]) in
+            self?.friends.value = friends
         }
     }
     

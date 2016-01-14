@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CocoaLumberjackSwift
 
 class ChatViewController: JSQMessagesViewController
 {
@@ -21,6 +22,11 @@ class ChatViewController: JSQMessagesViewController
 
     var groupViewModel: GroupViewModel!
     var group: Group!
+    
+    deinit{
+        DDLogDebug("ChatViewController is deallocated")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

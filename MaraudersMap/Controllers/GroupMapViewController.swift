@@ -8,11 +8,16 @@
 
 import UIKit
 import MapKit
+import CocoaLumberjackSwift
 
 class GroupMapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
+    
+    deinit{
+        DDLogDebug("GroupMapViewController is being dealloced.")
+    }
     
     var group: Group!
     var groupViewModel: GroupViewModel!

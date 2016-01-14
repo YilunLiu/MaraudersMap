@@ -20,8 +20,8 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         self.friendsViewModel.friends.producer.startWithNext({
-            _ in
-            self.tableView.reloadData()
+            [weak self] _ in
+            self?.tableView.reloadData()
         })
         self.friendsViewModel.reloadFriends()
     }

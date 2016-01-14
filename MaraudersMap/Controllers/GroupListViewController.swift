@@ -18,8 +18,8 @@ class GroupListViewController: UITableViewController {
         super.viewDidLoad()
         
         groupsViewModel.groups.producer.startWithNext({
-            _ in
-            self.tableView.reloadData()
+            [weak self] _ in
+            self?.tableView.reloadData()
         })
         groupsViewModel.reloadGroups()
     }
