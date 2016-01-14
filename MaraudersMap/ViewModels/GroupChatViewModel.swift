@@ -32,8 +32,8 @@ class GroupChatViewModel: NSObject{
         self.lastUpdatedTime = MutableProperty<NSDate>(group.lastMessageTime)
         super.init()
         
-        self.groupService.messageSignal.observeOn(QueueScheduler.mainQueueScheduler)
-            .observeNext{
+        self.groupService.messageProducer.observeOn(QueueScheduler.mainQueueScheduler)
+            .startWithNext{
                 [weak self] message in
                 self?.messages.value.append(message)
                 self?.lastMessage.value = message

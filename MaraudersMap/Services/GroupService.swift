@@ -16,7 +16,7 @@ class GroupService {
     private let group: Group
     private let messageURL: String
     private let firebaseRef: Firebase
-    let messageSignal: Signal<Message, NSError>
+    let messageProducer: SignalProducer<Message, NSError>
     let messageObserver: Observer<Message, NSError>
     
     static var map = [String: GroupService]()
@@ -34,7 +34,7 @@ class GroupService {
         self.firebaseRef = Firebase(url: self.messageURL)
         self.firebaseRef.keepSynced(true)
         
-        let (signal, observer) = Signal<Message, NSError>.pipe()
+        let (signalProducer, observer) = SignalProducer<Message, NSError>.buffer()
         self.firebaseRef.observeEventType(.ChildAdded){
             (snapshot: FDataSnapshot!) in
             if !(snapshot.value is NSNull){
@@ -48,7 +48,7 @@ class GroupService {
                 observer.sendNext(message)
             }
         }
-        self.messageSignal = signal
+        self.messageProducer = signalProducer
         self.messageObserver = observer
         
     }
