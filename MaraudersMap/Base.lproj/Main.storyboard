@@ -455,7 +455,7 @@
         <scene sceneID="gpX-k7-sgt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hxR-dw-bce" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile_Inactive_Icon" selectedImage="Profile_Active_Icon" id="aLN-4o-fre"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="aLN-4o-fre"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Vy-1k-qFL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -721,7 +721,7 @@
         <scene sceneID="2Lk-VR-gFy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="szt-vT-Meh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="Map_Inactive_Icon" selectedImage="Map_Active_Icon" id="EMD-g7-Jbg"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="EMD-g7-Jbg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ujT-K2-D16">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -740,7 +740,7 @@
         <scene sceneID="B9d-tY-7XL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="grS-XF-yrr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="Chat_Inactive_Icon" selectedImage="Chat_Active_Icon" id="mex-Ho-vWA"/>
+                    <tabBarItem key="tabBarItem" title="Chat" id="mex-Ho-vWA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vFc-kb-5oO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -775,12 +775,4 @@
             <point key="canvasLocation" x="1975" y="457"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Chat_Active_Icon" width="48" height="37"/>
-        <image name="Chat_Inactive_Icon" width="48" height="37"/>
-        <image name="Map_Active_Icon" width="48" height="42"/>
-        <image name="Map_Inactive_Icon" width="48" height="42"/>
-        <image name="Profile_Active_Icon" width="48" height="48"/>
-        <image name="Profile_Inactive_Icon" width="48" height="48"/>
-    </resources>
 </document>
