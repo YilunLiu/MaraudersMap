@@ -34,7 +34,6 @@
 		5B16B4B61C2CEBC40009EA2B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4B51C2CEBC40009EA2B /* SignupViewController.swift */; };
 		5B16B4B81C2D026A0009EA2B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4B71C2D026A0009EA2B /* Group.swift */; };
 		5B16B4BD1C2D349A0009EA2B /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4BC1C2D349A0009EA2B /* GroupsViewModel.swift */; };
-		5B16B4BF1C2D3AC40009EA2B /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4BE1C2D3AC40009EA2B /* GroupViewModel.swift */; };
 		5B16B4C11C2D3B020009EA2B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4C01C2D3B020009EA2B /* Message.swift */; };
 		5B16B4C31C2D3CB10009EA2B /* GlobalSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B16B4C21C2D3CB10009EA2B /* GlobalSetting.swift */; };
 		5B16B4C51C2D3D410009EA2B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B16B4C41C2D3D410009EA2B /* libc++.tbd */; };
@@ -102,6 +101,7 @@
 		5B48E8D21C2E804D0060F94D /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8D01C2E804D0060F94D /* TextFieldTableViewCell.swift */; };
 		5B48E8D31C2E804D0060F94D /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */; };
 		5B48E8D51C2E87530060F94D /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E8D41C2E87530060F94D /* GroupsService.swift */; };
+		5B7E23411C47836B00E9154F /* GroupChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E23401C47836B00E9154F /* GroupChatViewModel.swift */; };
 		5B9627E61C44D6560087CB86 /* GroupSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9627E51C44D6560087CB86 /* GroupSettingViewController.swift */; };
 		5B9627E81C44D9960087CB86 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9627E71C44D9960087CB86 /* MapKit.framework */; };
 		5B9627EA1C44DC4F0087CB86 /* UIColor+RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9627E91C44DC4F0087CB86 /* UIColor+RandomColor.swift */; };
@@ -164,7 +164,6 @@
 		5B16B4B51C2CEBC40009EA2B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		5B16B4B71C2D026A0009EA2B /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		5B16B4BC1C2D349A0009EA2B /* GroupsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
-		5B16B4BE1C2D3AC40009EA2B /* GroupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
 		5B16B4C01C2D3B020009EA2B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5B16B4C21C2D3CB10009EA2B /* GlobalSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSetting.swift; sourceTree = "<group>"; };
 		5B16B4C41C2D3D410009EA2B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -278,6 +277,7 @@
 		5B48E8D01C2E804D0060F94D /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		5B48E8D11C2E804D0060F94D /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		5B48E8D41C2E87530060F94D /* GroupsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
+		5B7E23401C47836B00E9154F /* GroupChatViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupChatViewModel.swift; sourceTree = "<group>"; };
 		5B9627E51C44D6560087CB86 /* GroupSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSettingViewController.swift; sourceTree = "<group>"; };
 		5B9627E71C44D9960087CB86 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5B9627E91C44DC4F0087CB86 /* UIColor+RandomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RandomColor.swift"; sourceTree = "<group>"; };
@@ -462,9 +462,9 @@
 			isa = PBXGroup;
 			children = (
 				5B16B4BC1C2D349A0009EA2B /* GroupsViewModel.swift */,
-				5B16B4BE1C2D3AC40009EA2B /* GroupViewModel.swift */,
 				5B48E8C91C2E52B80060F94D /* FriendsViewModel.swift */,
 				5B9627EB1C45C7CF0087CB86 /* UserLocationViewModel.swift */,
+				5B7E23401C47836B00E9154F /* GroupChatViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -845,11 +845,11 @@
 				5B16B4B61C2CEBC40009EA2B /* SignupViewController.swift in Sources */,
 				5B16B5541C2D72800009EA2B /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
 				5B16B5521C2D72800009EA2B /* JSQMessagesBubblesSizeCalculator.m in Sources */,
-				5B16B4BF1C2D3AC40009EA2B /* GroupViewModel.swift in Sources */,
 				5B16B5561C2D72800009EA2B /* JSQLocationMediaItem.m in Sources */,
 				5B16B5601C2D72800009EA2B /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				5B16B55E1C2D72800009EA2B /* JSQMessagesCollectionView.m in Sources */,
 				5B16B5501C2D72800009EA2B /* JSQMessagesTimestampFormatter.m in Sources */,
+				5B7E23411C47836B00E9154F /* GroupChatViewModel.swift in Sources */,
 				5B16B4B11C2CE9E30009EA2B /* LoginViewController.swift in Sources */,
 				5B16B4AF1C2CE57E0009EA2B /* MeViewController.swift in Sources */,
 				5B9627E61C44D6560087CB86 /* GroupSettingViewController.swift in Sources */,

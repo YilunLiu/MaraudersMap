@@ -8,13 +8,13 @@
 
 import Foundation
 
-class UserLocationAnnotation: NSObject, MKAnnotation{
+class UserLocationAnnotation: MKPointAnnotation{
     
-    var coordinate: CLLocationCoordinate2D
     let userId: String
     
     init(location: Location, user: User){
-        self.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
         self.userId = user.objectId!
+        super.init()
+        self.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
     }
 }

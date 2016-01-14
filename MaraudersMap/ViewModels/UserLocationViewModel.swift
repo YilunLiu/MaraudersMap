@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import ReactiveCocoa
+import CocoaLumberjackSwift
 
 class UserLocationViewModel: NSObject{
     
@@ -46,5 +47,9 @@ class UserLocationViewModel: NSObject{
             [weak self] date in
             self?.lastUpdateTime.value = date
         }
+    }
+    
+    deinit{
+        DDLogDebug("UserLocationViewModel for user(\(self.user.objectId!)) is deallocated")
     }
 }

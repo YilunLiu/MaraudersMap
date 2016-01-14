@@ -20,7 +20,6 @@ class GroupMapViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     var group: Group!
-    var groupViewModel: GroupViewModel!
     var userLocationViewModels = [String: UserLocationViewModel]()
     
     override func viewDidLoad() {
@@ -32,7 +31,6 @@ class GroupMapViewController: UIViewController, UITableViewDelegate, UITableView
         for member in group.members{
             userLocationViewModels[member.objectId!] = UserLocationViewModel(user: member)
         }
-        self.groupViewModel = GroupViewModel.groupViewModel(group)
         self.tableView.reloadData()
         
         for (_, viewModel) in self.userLocationViewModels{
@@ -40,21 +38,21 @@ class GroupMapViewController: UIViewController, UITableViewDelegate, UITableView
                 mapView.addAnnotation(annotation)
             } else {
                 viewModel.mapAnnotation.producer.startWithNext{
-                    annotation in
+                    [weak self] annotation in
                     if annotation != nil{
-                        self.mapView.addAnnotation(annotation!)
+                        self?.mapView.addAnnotation(annotation!)
                     }
                 }
             }
         }
         
         // Zoom to fit all annotations
-        let mapEdgePadding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        let mapEdgePadding = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
         var zoomRect:MKMapRect = MKMapRectNull
         
         for annotation in mapView.annotations{
             let aPoint:MKMapPoint = MKMapPointForCoordinate(annotation.coordinate)
-            let rect:MKMapRect = MKMapRectMake(aPoint.x, aPoint.y, 0.1, 0.1)
+            let rect:MKMapRect = MKMapRectMake(aPoint.x, aPoint.y, 0.2, 0.2)
             
             if MKMapRectIsNull(zoomRect) {
                 zoomRect = rect
